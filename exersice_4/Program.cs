@@ -10,18 +10,19 @@ int number2 = int.Parse(Console.ReadLine());
 Console.Write(" Введите третье число: ");
 int number3 = int.Parse(Console.ReadLine());
 
-if(number1 > number2 && number1 > number3) {
-    Console.WriteLine($" {number1} максимальное из трёх чисел");
-}
+int max = number1;
 
-if(number2 > number3 && number2 > number1) {
-    Console.WriteLine($" {number2} максимальное из трёх чисел");
-}
+    if (number1 == number2 && number1 == number3 && number3 == number2) {                     //в условии задачи этого нет, 
+       Console.WriteLine(" Все числа равны");                                                 //но я добавил данную проверку.
+       return;                                                                                
 
-if(number3 > number1 && number3 > number2) {
-    Console.WriteLine($" {number3} максимальное из трёх чисел");
-}
+    } 
 
-if (number1 == number2 && number1 == number3 && number3 == number2) {                     //в условии задачи этого нет, 
-    Console.WriteLine(" Все числа равны");                                                //но я добавил данную проверку.
-}
+    if (number2 > max) {
+        max = number2; 
+    }
+    
+    if (number3 > max) {
+        max = number3;
+    }
+Console.WriteLine($"max {max}");
